@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
     "@biomejs/biome": "1.9.4",
+    "autoprefixer": "^10.4.20",
     "browser-sync": "^3.0.2",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.4",
