@@ -10,14 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout the code
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    # Step 2: Deploy the ./src folder to gh-pages
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./src
-        publish_branch: gh-pages
+      # Step 2: Set up environment
+      - name: Set up Bash
+        run: sudo apt-get install -y bash
+
+      # Step 3: Run the script to add hashes to filenames
+      - name: Add hash to filenames
+        run: |
+          # Save the script to a file
+          echo '#!/bin/bash' > add_hashes.sh
+          echo 'ASSETS_DIR="./src"' >> add_hashes.sh
+          echo 'HTML_FILE="./index.html"' >> add_hashes.sh
+          echo 'for file in $ASSETS_DIR/*.{css,js}; do' >> add_hashes.sh
+          echo '  HASH=$(md5sum "$file" | cut -c1-8)' >> add_hashes.sh
+          echo '  BASENAME=$(basename "$file")' >> add_hashes.sh
+          echo '  EXT="${BASENAME##*.}"' >> add_hashes.sh
+          echo '  NAME="${BASENAME%.*}"' >> add_hashes.sh
+          echo '  NEW_NAME="${NAME}.${HASH}.${EXT}"' >> add_hashes.sh
+          echo '  mv "$file" "$ASSETS_DIR/$NEW_NAME"' >> add_hashes.sh
+          echo '  sed -i "s|$NAME.$EXT|$NEW_NAME|g" "$HTML_FILE"' >> add_hashes.sh
+          echo 'done' >> add_hashes.sh
+          chmod +x add_hashes.sh
+          ./add_hashes.sh
+
+      # Step 4: Deploy the updated files to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src
+          publish_branch: gh-pages
