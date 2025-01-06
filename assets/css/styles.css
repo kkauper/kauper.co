@@ -1,0 +1,154 @@
+/* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font--size-xl: clamp(36px, 4.25vw, 6vw);
+  --font--size-lg: clamp(26px, 1.81vw, 1.81vw);
+}
+
+@font-face {
+  font-family: 'safirobold';
+  src: url('../fonts/safiro-bold-webfont.eot');
+  src: url('../fonts/safiro-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/safiro-bold-webfont.woff2') format('woff2'),
+       url('../fonts/safiro-bold-webfont.woff') format('woff'),
+       url('../fonts/safiro-bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'safirobold_italic';
+  src: url('../fonts/safiro-bolditalic-webfont.eot');
+  src: url('../fonts/safiro-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/safiro-bolditalic-webfont.woff2') format('woff2'),
+       url('../fonts/safiro-bolditalic-webfont.woff') format('woff'),
+       url('../fonts/safiro-bolditalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'safiromedium';
+  src: url('../fonts/safiro-medium-webfont.eot');
+  src: url('../fonts/safiro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/safiro-medium-webfont.woff2') format('woff2'),
+       url('../fonts/safiro-medium-webfont.woff') format('woff'),
+       url('../fonts/safiro-medium-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'safiromedium_italic';
+  src: url('../fonts/safiro-mediumitalic-webfont.eot');
+  src: url('../fonts/safiro-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/safiro-mediumitalic-webfont.woff2') format('woff2'),
+       url('../fonts/safiro-mediumitalic-webfont.woff') format('woff'),
+       url('../fonts/safiro-mediumitalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'safiroregular';
+  src: url('../fonts/safiro-regular-webfont.eot');
+  src: url('../fonts/safiro-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/safiro-regular-webfont.woff2') format('woff2'),
+       url('../fonts/safiro-regular-webfont.woff') format('woff'),
+       url('../fonts/safiro-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'safiroregular_italic';
+  src: url('../fonts/safiro-regularitalic-webfont.eot');
+  src: url('../fonts/safiro-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/safiro-regularitalic-webfont.woff2') format('woff2'),
+       url('../fonts/safiro-regularitalic-webfont.woff') format('woff'),
+       url('../fonts/safiro-regularitalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'safirosemibold';
+  src: url('../fonts/safiro-semibold-webfont.eot');
+  src: url('../fonts/safiro-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/safiro-semibold-webfont.woff2') format('woff2'),
+       url('../fonts/safiro-semibold-webfont.woff') format('woff'),
+       url('../fonts/safiro-semibold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'safirosemibold_italic';
+  src: url('../fonts/safiro-semibolditalic-webfont.eot');
+  src: url('../fonts/safiro-semibolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/safiro-semibolditalic-webfont.woff2') format('woff2'),
+       url('../fonts/safiro-semibolditalic-webfont.woff') format('woff'),
+       url('../fonts/safiro-semibolditalic-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "safiroregular"
+}
+
+h2 {
+  @apply font-safirosemibolditalic;
+  font-size: var(--font--size-xl);
+  line-height: 0.975;
+}
+
+.container {
+      width: 80%;
+      margin: 50px auto;
+      max-width: 600px;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 10px;
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-bottom: none;
+      transition: background 0.3s ease;
+    }
+
+    .tab.active {
+      background: #007BFF;
+      color: #fff;
+    }
+
+    .tab:hover {
+      background: #f0f0f0;
+    }
+
+    .tab-content {
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 20px;
+      min-height: 100px;
+    }
+
+    .tab-panel {
+      display: none;
+      opacity: 0;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
