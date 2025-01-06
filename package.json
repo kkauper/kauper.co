@@ -7,7 +7,7 @@
     "dev": "npm-run-all --parallel build serve sync",
     "serve": "nodemon main.mjs",
     "sync": "browser-sync start --config bs-config.js",
-    "build": "tailwindcss -i ./src/styles.css -o ./src/output.css --watch"
+    "build": "tailwindcss -i ./src/assets/css/styles.css -o ./src/assets/css/main.css --watch"
   },
   "keywords": [],
   "author": "",
