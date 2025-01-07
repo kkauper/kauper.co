@@ -113,17 +113,17 @@ h2 {
 }
 
 .tab-content {
-  height: calc(100vh - 8rem - 4rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
+  min-height: calc(100vh - 8rem - 4rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
 }
 
 @media screen and (max-width: 767px) {
   .tab-content {
-    height: calc(65vh - 6rem - 3rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
+    min-height: calc(65vh - 6rem - 3rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
   }
 }
 
-h4 {
-  a {
+a.position {
+  h4 {
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -140,12 +140,12 @@ h4 {
       transform-origin: bottom right;
       transition: transform .4s cubic-bezier(.86,0,.07,1);
     }
+  }
 
-    &:hover {
-      &:after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
+  &:hover {
+    h4:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
   }
 }
