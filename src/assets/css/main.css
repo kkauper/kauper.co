@@ -599,12 +599,20 @@ video {
   margin-bottom: 1rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .flex {
   display: flex;
 }
 
 .hidden {
   display: none;
+}
+
+.h-12 {
+  height: 3rem;
 }
 
 .h-16 {
@@ -621,6 +629,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-16 {
@@ -776,6 +788,25 @@ video {
 
 .opacity-0 {
   opacity: 0;
+}
+
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition-filter {
+  transition-property: filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.ease-easeInOutCubic {
+  transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 :root {
@@ -934,17 +965,17 @@ h2 {
 }
 
 .tab-content {
-  height: calc(100vh - 8rem - 4rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
+  min-height: calc(100vh - 8rem - 4rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
 }
 
 @media screen and (max-width: 767px) {
   .tab-content {
-    height: calc(65vh - 6rem - 3rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
+    min-height: calc(65vh - 6rem - 3rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
   }
 }
 
-h4 {
-  a {
+a.position {
+  h4 {
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -960,11 +991,11 @@ h4 {
       transform-origin: bottom right;
       transition: transform .4s cubic-bezier(.86,0,.07,1);
     }
-    &:hover {
-      &:after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
+  }
+  &:hover {
+    h4:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
   }
 }
@@ -972,6 +1003,11 @@ h4 {
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:grayscale-0:hover {
+  --tw-grayscale: grayscale(0);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .group.is-active .group-\[\.is-active\]\:block {
@@ -1005,6 +1041,10 @@ h4 {
     margin-bottom: 4rem;
   }
 
+  .md\:mt-12 {
+    margin-top: 3rem;
+  }
+
   .md\:px-12 {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -1018,5 +1058,11 @@ h4 {
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:mt-16 {
+    margin-top: 4rem;
   }
 }
