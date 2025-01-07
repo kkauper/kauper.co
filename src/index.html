@@ -9,45 +9,242 @@
 </head>
 
 <body class="bg-white">
-  <main class="mx-auto max-w-5xl h-screen flex flex-col justify-start items-center px-6">
+  <div id="page-loader" class="fixed top-0 left-0 w-full h-full bg-white flex justify-center items-center z-50">
+    <div class="loader-spinner border-8 border-t-8 border-gray-400 border-t-black rounded-full w-16 h-16 animate-spin">
+    </div>
+  </div>
+
+  <main
+    class="mx-auto max-w-5xl h-screen flex flex-col justify-start items-start px-6 md:px-12 sm:px-12 opacity-0 visibility-hidden">
     <header id="top" class="flex flex-col py-12 md:py-16 w-full mb-12 md:mb-16">
       <a href="https://kauper.co" class="font-safirobold text-black tracking-wide">Kai Kauper</a>
       <span class="font-safiroregular text-gray-400">Designer & Software Engineer</span>
     </header>
-    <section class="mb-36">
-      <h2>More soon… I promise 🤞</h2>
+    <section class="flex flex-col w-full">
+      <div class="tabs flex gap-x-4 sm:gap-x-6 mb-4">
+        <div class="tab group is-active" data-tab="all"><span
+            class="text-gray-500 group-[.is-active]:text-black hover:text-black text-xs sm:text-sm md:text-base">For
+            everyone</span></div>
+        <div class="tab group" data-tab="designers"><span
+            class="text-gray-500 group-[.is-active]:text-black hover:text-black text-xs sm:text-sm md:text-base">Designers</span>
+        </div>
+        <div class="tab group" data-tab="managers"><span
+            class="text-gray-500 group-[.is-active]:text-black hover:text-black text-xs sm:text-sm md:text-base">Managers</span>
+        </div>
+        <div class="tab group" data-tab="devs"><span
+            class="text-gray-500 group-[.is-active]:text-black hover:text-black text-xs sm:text-sm md:text-base">Engineers</span>
+        </div>
+        <div class="tab group" data-tab="ai"><span
+            class="text-gray-400 group-[.is-active]:text-black hover:text-black text-xs sm:text-sm md:text-base">AI
+            experts</span></div>
+      </div>
+      <div class="tab-content relative">
+        <div class="tab-panel group w-full is-active" id="all">
+          <h2 class="hidden group-[.is-active]:block">Hey Ya! I'm a Designer and Developer Who Loves Creating
+            Simple, Beautiful Solutions That Make Life Easier
+            for People.</h2>
+        </div>
+        <div class="tab-panel group w-full" id="designers">
+          <h2 class="hidden group-[.is-active]:block">Welcome to my world of design—where creativity and
+            functionality come together to make things beautiful
+            and useful.</h2>
+        </div>
+        <div class="tab-panel group w-full" id="managers">
+          <h2 class="hidden group-[.is-active]:block">I’m all about turning big ideas into reality with the
+            perfect mix of strategy, creativity, and results.
+          </h2>
+        </div>
+        <div class="tab-panel group w-full" id="devs">
+          <h2 class="hidden group-[.is-active]:block">Hey! I Build Solutions with Code, Making Sure Everything
+            Works
+            Smoothly—Like Magic,
+            But Real.</h2>
+        </div>
+        <div class="tab-panel group w-full" id="ai">
+          <h2 class="hidden group-[.is-active]:block">Hey Ya! I’m a Designer and Developer Who Talks to AI Like
+            It’s My Best Friend, Creating Smart, Funny
+            Experiences That
+            Make Users Wonder How That Is Possible.</h2>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="position flex flex-col gap-2 mb-16">
+        <aside class="flex justify-center items-center w-20 h-20 rounded-full bg-gray-100 -ml-1.5">Logo</aside>
+        <h4><a href="https://musemachine.de" target="_blank">MuseMachine</a></h4>
+        <h3 class="text-4xl font-safirobolditalic">Designer & Co-Founder</h3>
+        <div class="flex gap-x-6">
+          <span>now</span>
+          <span>Böblingen, Germany</span>
+        </div>
+        <p class="w-2/3 text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cupiditate
+          assumenda quasi, aspernatur
+          natus maxime nam repudiandae! Unde excepturi doloremque vitae, illo recusandae, qui consequuntur sit
+          distinctio inventore ab in.</p>
+      </div>
+      <div class="position flex flex-col gap-2 mb-16">
+        <aside class="flex justify-center items-center w-20 h-20 rounded-full bg-gray-100 -ml-1.5">Logo</aside>
+        <h4>Mercedes-Benz Tech Innovation</h4>
+        <h3 class="text-4xl font-safirobolditalic">User Experience Designer</h3>
+        <div class="flex gap-x-6">
+          <span>now</span>
+          <span>Stuttgart, Germany</span>
+        </div>
+        <p class="w-2/3 text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cupiditate
+          assumenda quasi,
+          aspernatur
+          natus maxime nam repudiandae! Unde excepturi doloremque vitae, illo recusandae, qui consequuntur sit
+          distinctio inventore ab in.</p>
+      </div>
+      <div class="position flex flex-col gap-2 mb-16">
+        <aside class="flex justify-center items-center w-20 h-20 rounded-full bg-gray-100 -ml-1.5">Logo</aside>
+        <h4>DGTL.ONE</h4>
+        <h3 class="text-4xl font-safirobolditalic">Designer & Co-Founder</h3>
+        <div class="flex gap-x-6">
+          <span>2016–2022</span>
+          <span>Stuttgart, Germany</span>
+        </div>
+        <p class="w-2/3 text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cupiditate
+          assumenda quasi, aspernatur
+          natus maxime nam repudiandae! Unde excepturi doloremque vitae, illo recusandae, qui consequuntur sit
+          distinctio inventore ab in.</p>
+      </div>
+      <div class="position flex flex-col gap-2 mb-16">
+        <aside class="flex justify-center items-center w-20 h-20 rounded-full bg-gray-100 -ml-1.5">Logo</aside>
+        <h4>Portland Communications</h4>
+        <h3 class="text-4xl font-safirobolditalic">User Experience Designer</h3>
+        <div class="flex gap-x-6">
+          <span>2014–2016</span>
+          <span>London, UK</span>
+        </div>
+        <p class="w-2/3 text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cupiditate
+          assumenda quasi, aspernatur
+          natus maxime nam repudiandae! Unde excepturi doloremque vitae, illo recusandae, qui consequuntur sit
+          distinctio inventore ab in.</p>
+      </div>
+      <div class="position flex flex-col gap-2 mb-16">
+        <aside class="flex justify-center items-center w-20 h-20 rounded-full bg-gray-100 -ml-1.5">Logo</aside>
+        <h4><a href="https://discodoener.de" target="_blank">Discodoener</a></h4>
+        <h3 class="text-4xl font-safirobolditalic">User Experience Designer</h3>
+        <div class="flex gap-x-6">
+          <span>2010–2014</span>
+          <span>Stuttgart, Germany</span>
+        </div>
+        <p class="w-2/3 text-gray-400">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid cupiditate
+          assumenda quasi, aspernatur
+          natus maxime nam repudiandae! Unde excepturi doloremque vitae, illo recusandae, qui consequuntur sit
+          distinctio inventore ab in.</p>
+      </div>
     </section>
   </main>
 
   <script src="./assets/js/gsap.min.js"></script>
 
   <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('page-loader');
+      const mainContent = document.querySelector('main');
+
+      // Step 1: Animate the loader fade-out
+      gsap.to(loader, {
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.out',
+        onComplete: () => {
+          // Step 2: Hide the loader completely and reveal main content
+          loader.style.display = 'none'; // Remove the loader from the DOM
+          gsap.to(mainContent, {
+            opacity: 1,
+            visibility: 'visible', // Make content visible
+            duration: 1,
+            ease: 'power2.out',
+          });
+        }
+      });
+    });
+
+    // Wrap every word in a span tag on page load
+    function wrapWordsInSpan() {
+      const h2Elements = document.querySelectorAll('h2');
+      h2Elements.forEach(h2 => {
+        // Create a new content structure without spaces treated as words
+        const textContent = h2.textContent;
+        h2.innerHTML = ''; // Clear existing content
+
+        // Use a regular expression to match words and spaces
+        const contentArray = textContent.split(/(\s+)/); // Split by words and spaces, preserving spaces
+
+        // Iterate over the content array
+        contentArray.forEach(item => {
+          if (item.trim() !== '') { // If it's a word (not just whitespace)
+            const span = document.createElement('span');
+            span.textContent = item;
+            span.style.opacity = 0; // Initially hide the words
+            span.style.transform = 'translateY(10px)'; // Slightly offset vertically
+            h2.appendChild(span);
+          } else {
+            // If it's a space, append it directly as a text node to preserve spacing
+            h2.appendChild(document.createTextNode(item));
+          }
+        });
+      });
+    }
+
+    // Function to animate text word by word
+    function animateText(panel) {
+      const textElement = panel.querySelector('h2');
+      const spans = textElement.querySelectorAll('span');
+      gsap.to(spans, {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2, // Delay between words
+        duration: 0.5, // Animation duration for each word
+        ease: 'power2.out',
+      });
+    }
+
+    // Function to reset the animation before applying it again
+    function resetText(panel) {
+      const textElement = panel.querySelector('h2');
+      const spans = textElement.querySelectorAll('span');
+      gsap.set(spans, { opacity: 0, y: 10 }); // Reset each word to initial state
+    }
+
+    // Ensure that all h2 elements are wrapped with spans on page load
+    wrapWordsInSpan();
+
+    // Ensure the first panel's text animates on page load
+    const firstPanel = document.querySelector('.tab-panel.is-active');
+    if (firstPanel) {
+      animateText(firstPanel); // First animation on page load
+    }
+
     // Tabs logic
     const tabs = document.querySelectorAll('.tab');
     const tabPanels = document.querySelectorAll('.tab-panel');
 
-    // Ensure the first panel is visible on load
-    const firstPanel = document.querySelector('.tab-panel.active');
-    if (firstPanel) {
-      gsap.set(firstPanel, { opacity: 1 });
-    }
-
+    // Tab click logic
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
-        // Remove active class from all tabs and panels
-        tabs.forEach((t) => t.classList.remove('active'));
+        tabs.forEach((t) => t.classList.remove('is-active'));
         tabPanels.forEach((panel) => {
-          panel.classList.remove('active');
-          gsap.to(panel, { opacity: 0, duration: 0.5 });
+          panel.classList.remove('is-active');
+          gsap.to(panel, { opacity: 0, duration: 0.5 }); // Fade out the old panel
         });
 
-        // Add active class to clicked tab and associated panel
-        tab.classList.add('active');
+        tab.classList.add('is-active');
         const targetPanel = document.querySelector(`#${tab.dataset.tab}`);
-        targetPanel.classList.add('active');
+        targetPanel.classList.add('is-active');
 
-        // Animate the active panel with GSAP
-        gsap.to(targetPanel, { opacity: 1, duration: 0.5 });
+        // Reset text animation in the new tab
+        resetText(targetPanel); // Reset text before animating
+
+        // Fade in the new panel first
+        gsap.to(targetPanel, {
+          opacity: 1,
+          duration: 0.5,
+          onComplete: () => animateText(targetPanel), // Animate text after panel fades in
+        });
       });
     });
   </script>
