@@ -25,25 +25,30 @@ jobs:
           cat << 'EOF' > add_hashes.sh
           #!/bin/bash
 
-          ASSETS_DIR="./src"  # Your assets folder (adjust if needed)
-          HTML_FILE="./src/index.html"  # HTML file to update (adjust if needed)
+          CSS_DIR="./src/assets/css"
+          JS_DIR="./src/assets/js"
+          HTML_FILE="./src/index.html"
 
-          # Loop through .css and .js files in the assets directory
-          for file in $ASSETS_DIR/*.{css,js}; do
-            # Ensure the file exists before proceeding
-            if [ -f "$file" ]; then
-              # Generate a hash and rename the file
-              HASH=$(md5sum "$file" | cut -c1-8)
-              BASENAME=$(basename "$file")
-              EXT="${BASENAME##*.}"
-              NAME="${BASENAME%.*}"
-              NEW_NAME="${NAME}.${HASH}.${EXT}"
+          # Process CSS and JS files
+          for DIR in "$CSS_DIR" "$JS_DIR"; do
+            if [ -d "$DIR" ]; then
+              for file in "$DIR"/*.{css,js}; do
+                # Ensure the file exists and has the correct extension
+                if [ -f "$file" ]; then
+                  # Generate a hash and rename the file
+                  HASH=$(md5sum "$file" | cut -c1-8)
+                  BASENAME=$(basename "$file")
+                  EXT="${BASENAME##*.}"
+                  NAME="${BASENAME%.*}"
+                  NEW_NAME="${NAME}.${HASH}.${EXT}"
 
-              # Rename the file
-              mv "$file" "$ASSETS_DIR/$NEW_NAME"
+                  # Rename the file
+                  mv "$file" "$DIR/$NEW_NAME"
 
-              # Update references in the HTML file
-              sed -i "s|$NAME.$EXT|$NEW_NAME|g" "$HTML_FILE"
+                  # Update references in the HTML file
+                  sed -i "s|$NAME.$EXT|$NEW_NAME|g" "$HTML_FILE"
+                fi
+              done
             fi
           done
           EOF

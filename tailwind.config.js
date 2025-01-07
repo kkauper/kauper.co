@@ -34,6 +34,12 @@ module.exports = {
           "sans-serif",
         ],
       },
+      transitionProperty: {
+        background: "background",
+      },
+      transitionTimingFunction: {
+        easeInOutCubic: "cubic-bezier(0.65, 0, 0.35, 1)",
+      },
     },
   },
   plugins: [],
