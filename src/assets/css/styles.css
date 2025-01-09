@@ -97,7 +97,9 @@
 }
 
 body {
-  font-family: "safiroregular"
+  font-family: "safiroregular";
+
+  b, strong { font-family: "safirosemibold"; }
 }
 
 h2 {
@@ -146,6 +148,34 @@ a.position {
     h4:after {
       transform: scaleX(1);
       transform-origin: bottom left;
+    }
+  }
+}
+
+footer {
+  a {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(1);
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: black;
+      transform-origin: bottom left;
+      transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    &:hover {
+      &:after {
+        transform: scaleX(0);
+        transform-origin: bottom right;
+      }
     }
   }
 }
