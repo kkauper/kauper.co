@@ -97,58 +97,85 @@
 }
 
 body {
-  font-family: "safiroregular"
+  font-family: "safiroregular";
+
+  b, strong { font-family: "safirosemibold"; }
 }
 
 h2 {
-  @apply font-safirosemibolditalic;
+  @apply font-safirosemibold;
   font-size: var(--font--size-xl);
-  line-height: 0.975;
+  line-height: 1;
 }
 
-.container {
-      width: 80%;
-      margin: 50px auto;
-      max-width: 600px;
+.tabs {
+  .tab {
+    @apply flex-initial cursor-pointer transition-background duration-300 ease-easeInOutCubic;
+  }
+}
+
+.tab-content {
+  min-height: calc(100vh - 8rem - 4rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
+}
+
+@media screen and (max-width: 767px) {
+  .tab-content {
+    min-height: calc(65vh - 6rem - 3rem - 1.5rem - 1.5rem - 1.5rem - 1rem);
+  }
+}
+
+a.position {
+  h4 {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 1px;
+      top: 110%;
+      left: 0;
+      background-color: black;
+      transform-origin: bottom right;
+      transition: transform .4s cubic-bezier(.86,0,.07,1);
+    }
+  }
+
+  &:hover {
+    h4:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+footer {
+  a {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(1);
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: black;
+      transform-origin: bottom left;
+      transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
     }
 
-    .tabs {
-      display: flex;
-      border-bottom: 2px solid #ddd;
+    &:hover {
+      &:after {
+        transform: scaleX(0);
+        transform-origin: bottom right;
+      }
     }
-
-    .tab {
-      flex: 1;
-      text-align: center;
-      padding: 10px;
-      cursor: pointer;
-      background: #fff;
-      border: 1px solid #ddd;
-      border-bottom: none;
-      transition: background 0.3s ease;
-    }
-
-    .tab.active {
-      background: #007BFF;
-      color: #fff;
-    }
-
-    .tab:hover {
-      background: #f0f0f0;
-    }
-
-    .tab-content {
-      border: 1px solid #ddd;
-      background: #fff;
-      padding: 20px;
-      min-height: 100px;
-    }
-
-    .tab-panel {
-      display: none;
-      opacity: 0;
-    }
-
-    .tab-panel.active {
-      display: block;
-    }
+  }
+}
